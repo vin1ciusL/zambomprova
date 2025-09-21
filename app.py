@@ -8,6 +8,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
+
 # Configuração do MongoDB Atlas (ou local)
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
