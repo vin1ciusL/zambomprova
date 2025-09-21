@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
 
-@app.route("/")
+@app.route("/test")
 def home():
     return "placeholder"
 

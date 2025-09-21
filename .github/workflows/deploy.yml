@@ -1,4 +1,4 @@
-name: CI/CD Pipeline - Notes Service
+name: CI/CD Pipeline - Prova Service
 
 on:
   push:
