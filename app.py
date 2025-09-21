@@ -3,12 +3,12 @@ from dotenv import load_dotenv
 from flask import Flask
 from flask_pymongo import PyMongo
 
-# Carregar variáveis de ambiente do .env
+# Carregar variáveis de ambiente
 load_dotenv()
 
 app = Flask(__name__)
 
-# Configuração do MongoDB (Atlas ou local)
+# Configuração do MongoDB Atlas (ou local)
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
 
