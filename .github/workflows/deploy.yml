@@ -48,7 +48,7 @@ jobs:
 
       - name: Deploy na EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.HOST_TEST }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.HOST_TEST }} << EOF
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/zambomprova:latest
           docker stop zambomprova || true
           docker rm zambomprova || true
