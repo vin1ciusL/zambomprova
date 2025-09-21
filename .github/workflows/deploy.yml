@@ -44,11 +44,11 @@ jobs:
       - name: Configurar SSH para EC2
         uses: webfactory/ssh-agent@v0.7.0
         with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+          ssh-private-key: ${{ secrets.KEY_TEST }}
 
       - name: Deploy na EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.HOST_TEST }} << 'EOF'
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/zambomprova:latest
           docker stop zambomprova || true
           docker rm zambomprova || true
