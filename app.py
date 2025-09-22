@@ -5,6 +5,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from datetime import datetime
 
+
 # Carregar variáveis de ambiente
 load_dotenv()
 
