@@ -49,7 +49,7 @@ jobs:
       - name: Deploy na EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.HOST_TEST }} << EOF
-          docker pull --no-cache ${{ secrets.DOCKERHUB_USERNAME }}/zambomprova:latest
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/zambomprova:latest
           docker stop zambomprova || true
           docker rm zambomprova || true
           docker run -d -p 8081:5001 \
