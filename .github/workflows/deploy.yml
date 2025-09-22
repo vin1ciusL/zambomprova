@@ -52,8 +52,5 @@ jobs:
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/zambomprova:latest
           docker stop zambomprova || true
           docker rm zambomprova || true
-          docker run -d -p 8081:5001 \
-            -e MONGO_URI=${{ secrets.MONGO_URI }} \
-            --name zambomprova \
-            ${{ secrets.DOCKERHUB_USERNAME }}/zambomprova:latest
+          docker run -d -p 8081:5001 -e MONGO_URI="${{ secrets.MONGO_URI }}" --name zambomprova ${{ secrets.DOCKERHUB_USERNAME }}/zambomprova:latest
           EOF
